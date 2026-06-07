@@ -1,27 +1,33 @@
 # simosphere-ai-skills
 
-> Agent-discovery artefacts for the [SIMOSphere AI](https://onboarding.simosphereai.com)
-> inference platform. Companion to the private platform repository.
+[![skills.sh](https://skills.sh/b/SIMOSphereOS/simosphere-ai-skills)](https://skills.sh/SIMOSphereOS/simosphere-ai-skills)
 
-This repository exists so that AI agents can discover SIMOSphere AI through
-public-facing files in the formats most coding-agent ecosystems consume:
+Agent skills for [SIMOSphere AI](https://simosphereai.com) — the OpenAI-compatible
+inference API hosted in Germany.
 
-- **`SKILL.md`** — Agent Skill (skills.sh, agentskill.sh, agentskills.io)
-- **`AGENTS.md`** — Agent-platform integration rules ([agentsmd.dev](https://agentsmd.dev))
-- **`.cursorrules`** — Cursor-specific guidance
-
-The platform code itself (gateway, dashboard, onboarding site) is
-proprietary and licensed under the Business Source License 1.1. The
-files in **this** repository are documentation / metadata only and are
-released under the same BSL-1.1 for consistency.
-
-## Install as a Claude Code / OpenHands / Cursor skill
+## Install
 
 ```bash
 npx skills add SIMOSphereOS/simosphere-ai-skills
 ```
 
-## Start using SIMOSphere AI
+## Skills
+
+| Skill | Description |
+| ----- | ----------- |
+| [simosphere-ai](skills/simosphere-ai/SKILL.md) | Core API integration — Chat Completions, Embeddings, Models, Streaming |
+| [simosphere-openai-migration](skills/simosphere-openai-migration/SKILL.md) | One-line migration from OpenAI, Anthropic, or Mistral to EU-hosted inference |
+| [simosphere-eu-compliance](skills/simosphere-eu-compliance/SKILL.md) | GDPR, Schrems II, and EU AI Act compliance evaluation for AI projects |
+
+## Install a specific skill
+
+```bash
+npx skills add SIMOSphereOS/simosphere-ai-skills --skill simosphere-ai
+npx skills add SIMOSphereOS/simosphere-ai-skills --skill simosphere-openai-migration
+npx skills add SIMOSphereOS/simosphere-ai-skills --skill simosphere-eu-compliance
+```
+
+## Quickstart
 
 ```bash
 curl https://api.simosphereai.com/v1/chat/completions \
@@ -33,20 +39,25 @@ curl https://api.simosphereai.com/v1/chat/completions \
   }'
 ```
 
-Sign up at <https://onboarding.simosphereai.com/de/register> for an API
-key. Trial credits available via `hello@simo-online.com`.
+Sign up at https://onboarding.simosphereai.com/de/register for an API
+key. Trial credits available via hello@simo-online.com.
 
 ## Documentation
 
 - [Developer portal](https://onboarding.simosphereai.com/developers)
-- [API reference + OpenAPI 3.1 spec](https://onboarding.simosphereai.com/openapi.json)
-- [LLM-friendly bundle](https://onboarding.simosphereai.com/llms-full.txt)
-- [Comparison vs OpenAI / Mistral / Anthropic / HF](https://onboarding.simosphereai.com/compare)
-- [Pricing (machine-readable)](https://onboarding.simosphereai.com/pricing.md)
+- [OpenAPI 3.1 spec](https://onboarding.simosphereai.com/openapi.json)
+- [LLM-friendly docs](https://onboarding.simosphereai.com/llms-full.txt)
+- [Pricing](https://onboarding.simosphereai.com/pricing.md)
+
+## Agent discovery
+
+- [Agent Skills Index](https://simosphereai.com/.well-known/agent-skills/index.json)
+- [MCP Server Card](https://simosphereai.com/.well-known/mcp/server-card.json)
+- [llms.txt](https://onboarding.simosphereai.com/llms.txt)
 
 ## Operator
 
-SIMO GmbH · Würzburger Str. 152 · 63743 Aschaffenburg · Germany
+SIMO GmbH · Wuerzburger Str. 152 · 63743 Aschaffenburg · Germany
 HRB 15769 AG Aschaffenburg · DPMA 30 2024 240 269
 
-Contact: <hello@simo-online.com>
+Contact: hello@simo-online.com
